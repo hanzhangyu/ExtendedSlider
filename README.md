@@ -8,7 +8,7 @@
 
 ### 使用
 
-> 环境：ES6，React,Antd,以及lodash算法库和classnames
+> 环境：ES6，React,Antd和classnames
 
 下载dist目录文件引入即可
 
@@ -76,11 +76,11 @@
     @SliderCrossSize: @CrossSize - 2px;//slider纵轴长度
     @HorizontalBoxShadow: 1px 0px 4px rgba(0, 0, 0, 0.3);
     @VerticalBoxShadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-    @HoverColor: #0097e0;//
-    @BtnHoverBoxShadow: 1px 1px 2px #888888;//
-    @BackgroundColor: #fff;//
-    @SliderBackgroundColor: #6b6b6b;//
-    @MarkBorderColor: #eee;//
+    @HoverColor: #0097e0;//悬浮时的颜射
+    @BtnHoverBoxShadow: 1px 1px 2px #888888;//悬浮时的阴影
+    @BackgroundColor: #fff;
+    @SliderBackgroundColor: #6b6b6b;
+    @MarkBorderColor: #eee;
 ```
 
 ### 测试
@@ -93,7 +93,7 @@
 
 ### 最后
 
-更新不会停止，有任何问题直接issue，但精力有限，如果你需要类似的功能欢迎直接引用，或者fork（fuck？好直接）过去，当需要共同改进，请联系我配置权限
+mark功能项目不需要，暂时不写了，过了元旦回来在补充，HAPPY NEW YEAR
 
 
 
