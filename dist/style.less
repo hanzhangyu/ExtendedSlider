@@ -1,0 +1,183 @@
+@MainSize: 174px;
+@CrossSize: 30px;
+@Space: 2px;
+@BarMainSize: 4px;
+@SliderMainSize: 10px;
+@SliderCrossSize: @CrossSize - 2px;
+@HorizontalBoxShadow: 1px 0px 4px rgba(0, 0, 0, 0.3);
+@VerticalBoxShadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+@HoverColor: #0097e0;
+@BtnHoverBoxShadow: 1px 1px 2px #888888;
+@BackgroundColor: #fff;
+@SliderBackgroundColor: #6b6b6b;
+@MarkBorderColor: #eee;
+
+.extended_slider {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  &.extended_slider_horizontal {
+    width: @MainSize;
+    height: @CrossSize;
+    .extended_slider-btn {
+      &:nth-child(1) {
+        top: 0;
+        right: 0;
+      }
+      &:nth-child(2) {
+        top: 0;
+        left: 0;
+      }
+    }
+    .extended_slider-bar {
+      left: @CrossSize+@Space;
+      top: 0;
+      bottom: 0;
+      right: @CrossSize+@Space;
+    }
+    .extended_slider-bg {
+      width: 100%;
+      height: @BarMainSize;
+      box-shadow: @HorizontalBoxShadow;
+      margin-top: (@CrossSize - @BarMainSize) / 2;
+    }
+    .extended_slider-slider {
+      width: @SliderMainSize;
+      height: @SliderCrossSize;
+      box-shadow: @HorizontalBoxShadow;
+      top: 1px;
+      left: 0px;
+      &:after {
+        height: @SliderCrossSize / 2 - 2px;
+        width: @SliderMainSize / 5;
+        margin-top: @SliderCrossSize / 4 + 1px;
+        margin-left: @SliderMainSize * 2 / 5;
+      }
+    }
+  }
+  &.extended_slider_vertical {
+    width: @CrossSize;
+    height: @MainSize;
+    .extended_slider-btn {
+      &:nth-child(1) {
+        top: 0;
+        right: 0;
+      }
+      &:nth-child(2) {
+        bottom: 0;
+        right: 0;
+      }
+    }
+    .extended_slider-bar {
+      top: @CrossSize+@Space;
+      right: 0;
+      bottom: @CrossSize+@Space;
+      left: 0;
+    }
+    .extended_slider-bg {
+      width: @BarMainSize;
+      height: 100%;
+      box-shadow: @VerticalBoxShadow;
+      margin: 0 auto;
+    }
+    //.extended_slider-mark {
+    //  top: 10px;
+    //  left: -21px;
+    //  height: 16px;
+    //  line-height: 16px;
+    //  padding: 0 2px;
+    //  transform: scale(0.9);
+    //  border-radius: 1px;
+    //  color: #000;
+    //  span{
+    //    position:relative;
+    //    z-index:10;
+    //  }
+    //  &:after{
+    //    content: " ";
+    //    height: 11px;
+    //    width: 11px;
+    //    background: #fff;
+    //    position: absolute;
+    //    right: -5.5px;
+    //    top: 1.5px;
+    //    transform: rotate(45deg);
+    //  }
+    //}
+    .extended_slider-slider {
+      width: @SliderCrossSize;
+      height: @SliderMainSize;
+      box-shadow: @VerticalBoxShadow;
+      left: 1px;
+      bottom: 0;
+      &:after {
+        height: @SliderMainSize / 5;
+        width: @SliderCrossSize / 2 - 2px;
+        margin-top: @SliderMainSize * 2 / 5;
+        margin-left: @SliderCrossSize / 4 + 1px;
+      }
+    }
+  }
+  .disabled {
+    color: #B1B1B1 !important;
+    box-shadow: none !important;
+    cursor: default !important;
+    transform: none !important;
+    pointer-events: none !important;
+    &:after {
+      background: #B1B1B1 !important;
+    }
+  }
+}
+
+.extended_slider-btn {
+  position: absolute;
+  z-index: 10;
+  border-radius: 2px;
+  width: @CrossSize;
+  height: @CrossSize;
+  background: @BackgroundColor;
+  line-height: @CrossSize;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .2s;
+  &:hover {
+    color: @HoverColor;
+    box-shadow: @BtnHoverBoxShadow;
+    transform: scale(1.1);
+  }
+}
+
+.extended_slider-bar {
+  position: absolute;
+}
+
+.extended_slider-bg {
+  background: @BackgroundColor;
+  cursor: pointer;
+}
+
+.extended_slider-mark {
+  position: absolute;
+  background: @BackgroundColor;
+  border: 1px solid @MarkBorderColor;
+  box-shadow: @VerticalBoxShadow;
+}
+
+.extended_slider-slider {
+  position: absolute;
+  background: @BackgroundColor;
+  border-radius: 2px;
+  cursor: pointer;
+  &:hover:after {
+    background-color: @HoverColor;
+  }
+  &:after {
+    background-color: @SliderBackgroundColor;
+    position: absolute;
+    content: "";
+  }
+}
